@@ -1,7 +1,7 @@
 language: python
 python: '3.6'
-script: nosetests
 install: pip install --user -r requirements.txt
+script: nosetests
 deploy:
   provider: pages
   skip_cleanup: true
