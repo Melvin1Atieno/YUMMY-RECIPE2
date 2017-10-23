@@ -1,8 +1,10 @@
+# -*- coding:utf-8 -*-
+
 import unittest
 
 # import modules that I will need to use
 # Use absolutes imports i.e directoryname.modulename
-from ..main.app import YummyRecipeRegistration
+from app.main import YummyRecipeRegistration
 
 class YummyAccountRegistrationTestCase(unittest.TestCase):
     def setUp(self):

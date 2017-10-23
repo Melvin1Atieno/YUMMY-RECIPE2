@@ -1,6 +1,6 @@
-my_project
-.vscode
-.env
+my_project/
+.vscode/
+.env/
 
 # Byte-compiled / optimized / DLL files
 __pycache__/
@@ -66,7 +66,7 @@ instance/
 .scrapy
 
 # Sphinx documentation
-docs/_build/
+yummy-recipes/docs/_build/
 
 # PyBuilder
 target/

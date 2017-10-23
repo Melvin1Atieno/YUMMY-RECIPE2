@@ -1,3 +1,5 @@
+# -*- coding:utf-8 -*-
+
 class YummyRecipeRegistration(object):
     def __init__ (self):
         self.invalid =   ('''!," ",*,~[,<,>,&,",\,',=,\,\,\],~''')
