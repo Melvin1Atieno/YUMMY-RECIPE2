@@ -1,11 +1,15 @@
 language: python
-python: '3.6'
-install: pip install --user -r requirements.txt
-script: nosetests
+
+python: 
+ -3.6
+install: pip install  -r requirements.txt
+script: nosetests test_app.py
+branches:
+    only: master
 deploy:
   provider: pages
   skip_cleanup: true
   github_token: b06c8c5b47cb9b03c7f24cf6e1f8cacff7601201
   on:
     branch: master
-after_success: coveralls
+after_success: change
