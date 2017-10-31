@@ -1,5 +1,6 @@
 Yummy recipes provides a platform for users to keep track of their awesome recipes and share with others if they so wish.
 
+[![Build Status](https://travis-ci.org/Melvin1Atieno/YUMMY-RECIPE2.svg?branch=DEVELOP)](https://travis-ci.org/Melvin1Atieno/YUMMY-RECIPE2)
 
 <a href='https://coveralls.io/github/Melvin1Atieno/YUMMY-RECIPE2?branch=master'><img src='https://coveralls.io/repos/github/Melvin1Atieno/YUMMY-RECIPE2/badge.svg?branch=master' alt='Coverage Status' /></a>
   
