@@ -4,37 +4,44 @@ class UserAccount(object):
         self.userdetails = {}
         self.users = []
 
-    def add_new(self, username, email, password, confirm_password):
+    def add_new(self, username, email, password):
+        '''adds new user'''
         if email in self.users:
-            return "the email is registered to an existing user"
+            return "exists"
         self.userdetails[username] = [username, email, password]
         self.users.append(email)
-        return "ACCOUNT SUCCEFULLY CREATED"
+        return "success"
 
     def confirm(self, username, password):
+        '''confirms correct username and password'''
+        error = None
         if username not in self.userdetails:
-            return "Invalid User name"
+            error = "Invalid User name"
+            return error
         userpassword = self.userdetails[username][2]
         if userpassword != password:
-            return "incorrect password"
-        return "welcome", username
+            error = "incorrect password"
+        return error
+
     def login(self, username, password):
-        self.confirm(username, password)
+        '''logs user in after their details have been confirmed'''
+        if self.confirm(username, password) != None:
+            return "SUCCESSFUL LOGIN"
+
+    def view_details(self, username):
+        '''returns a dict of the user details'''
+        return self.userdetails[username]
+
+    def update_details(self, username):
+        '''takes in new variables to re[l] '''
+        pass
 
 
-    # def view_details(self, username):
-        # return username,":",self.userdetails[username]
-
-    # def update(self,name):
-        # pass
-    # def delete(self, username):
-        # del self.userdetails[name]
-
-class RecipeCategories(object):
-
+class RecipeCategories(object): 
+    '''recipe category class'''
     def __init__(self):
         self.defaultcategories = []
-    
+
     def add_new_category(self, name):
         '''checks if the category exists, adds new recipe category if it doesn't '''
         if name in self.defaultcategories:
@@ -47,14 +54,14 @@ class RecipeCategories(object):
         '''returns a list of recipe categories'''
         return self.defaultcategories
 
-    def delete_category(self,name):
+    def delete_category(self, name):
         '''deletes an existing recipe category'''
         if name in self.defaultcategories:
             self.defaultcategories.remove(name)
         else:
             return "category does not exist"
 
-    def update_category(self,oldrecipecategory, newrecipecategory):
+    def update_category(self, oldrecipecategory, newrecipecategory):
         '''updates an existing recipe category'''
         if oldrecipecategory in self.defaultcategories:
             self.defaultcategories.remove(oldrecipecategory)
@@ -62,30 +69,29 @@ class RecipeCategories(object):
         else:
             return "category does not exist"
 
-class Recipe(RecipeCategories):
+class Recipe(object):
+    '''child class of the recipe category class'''
 
     def __init__(self):
-        '''calling the superclass'''
-        super().__init__()
+        '''initializing the'''
         self.defaultrecipe = {}
-    
-    def add_new_recipe(self, category, name, ingredients, method,):
-        '''adds a new recipe'''
-        self.defaultrecipe[name]=[[ingredients],method]
-        if category not in self.defaultcategories:
-            self.defaultcategories[category] = [name,":",self.defaultrecipe[name]]
-        else:
-            self.defaultcategories[category].append([name,":",self.defaultrecipe[name]])
-    
-    def view_recipe(self,recipename):
-        '''allows user to see an existing recipe'''
-        return recipename, ":", self.defaultrecipe[recipename]
 
-    def delete_recipe(self,name):
+    def add_new_recipe(self, recipename, ingredients, method,):
+        '''adds a new recipe'''
+        self.defaultrecipe[recipename]=[[ingredients], method]
+        if recipename not in self.defaultrecipe:
+            self.defaultrecipe = [[ingredients], method]
+        return "recipe already exists"
+
+    def view_recipe(self, recipename):
+        '''allows user to see an existing recipe'''
+        return self.defaultrecipe[recipename]
+
+    def delete_recipe(self, recipename):
         '''deletes an existing recipe'''
-        pass
+        if recipename in self.defaultrecipe:
+            del self.defaultrecipe[recipename]
         
-    
     def update_recipe(self,oldrecipe, newrecipe):
         RecipeCategories.update_category(self, oldrecipe, newrecipe)
         pass
