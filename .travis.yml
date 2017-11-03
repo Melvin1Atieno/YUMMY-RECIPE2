@@ -7,13 +7,6 @@ install:
    -pip install  -r requirements.txt
 
 script:
-   -nosetests test_app.py
-
-deploy:
-  provider: pages
-  skip_cleanup: true
-  github_token: b06c8c5b47cb9b03c7f24cf6e1f8cacff7601201
-  on:
-    branch: master
+   -nosetests --rednose
     
 after_success: coveralls
