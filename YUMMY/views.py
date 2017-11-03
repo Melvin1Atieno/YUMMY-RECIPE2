@@ -1,9 +1,11 @@
-from flask import Flask, render_template, url_for, request, redirect, session
-from YUMMY.models import UserAccount
+from flask import Flask, render_template, url_for, request, redirect, session, flash, Markup
+from .models import UserAccount
+from .forms import UserRegistrationForm, LoginForm
 
+from yummy import app
 
-app = Flask(__name__)
-# session = session()
+# Set variable to check if user is logged in
+loggedIn = True
 
 @app.route("/")
 def index():
@@ -15,11 +17,28 @@ def registration():
         email = request.form["email"]
         username = request.form["username"]
         password = request.form["password"]
-        confirm_password = request.form["confirm_password"]
         new_user = UserAccount()
-        new_user.add_new(email, username, password, confirm_password)
-        return redirect(url_for("login"))
+        if loggedIn:
+            user_already_logged_in = Markup("<div class='alert alert-info' role='alert'>\
+                                                             The user is already logged in\
+                                                  </div>")
+            flash(user_already_logged_in)
+            return redirect(url_for("registration"))
+        else:
+            results = new_user.add_new(email, username, password)
+            if results == "exists":
+                email_exists = Markup("<div class='alert alert-info' role='alert'>\
+                                                       The email you entered is registered to another user\
+                                          </div>")
+                flash(email_exists)
+                return redirect(url_for("registration"))
+            registered = Markup("<div class='alert alert-info' role='alert'>\
+                                                       you have been successfullly registered\
+                                          </div>")
+            flash(registered)
+            return redirect(url_for("login"))
     else:
+        # form = UserRegistrationForm(request.form())
         return render_template("USER_REGISTRATION.html")
 
 @app.route("/login", methods=["POST","GET"])
@@ -42,11 +61,3 @@ def logout():
     #removes "username" from the session if it exists
     # session.pop("usename", None)
     return redirect(url_for("login"))
-
-
-
-if __name__ == "__main__":
-    app.secret_key = "0456155"
-    app.config["SESSION_TYPE"] = "filesystem"
-
-    app.run(debug=True)
