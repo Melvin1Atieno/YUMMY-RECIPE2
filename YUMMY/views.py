@@ -1,8 +1,8 @@
 from flask import Flask, render_template, url_for, request, redirect, session, flash, Markup
 from .models import UserAccount
-from .forms import UserRegistrationForm, LoginForm
+# from .forms import UserRegistrationForm, LoginForm
 
-from yummy import app
+from YUMMY import app
 
 # Set variable to check if user is logged in
 loggedIn = True

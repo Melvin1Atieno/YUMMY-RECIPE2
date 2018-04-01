@@ -1,12 +1,15 @@
 language: python
 
 python: 
-  -"3.6"
+  -3.6
 
 install:
-   -pip install  -r requirements.txt
+  -pip install  -r requirements.txt
 
 script:
-   -nosetests --rednose
-    
-after_success: coveralls
+  -nosetests
+  -nosetests --with-coverage
+   
+on_success: change
+on_failure: always
+i

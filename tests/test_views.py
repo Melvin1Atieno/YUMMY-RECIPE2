@@ -1,5 +1,5 @@
 import unittest
-from yummy.views import app
+from YUMMY.views import app
 
 
 class FlaskTestCase(unittest.TestCase):

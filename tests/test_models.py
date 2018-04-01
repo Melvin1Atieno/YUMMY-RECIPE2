@@ -1,5 +1,5 @@
 import unittest
-from yummy.models import UserAccount, RecipeCategories, Recipe
+from YUMMY.models import UserAccount, RecipeCategories, Recipe
 
 class TestModels(unittest.TestCase):
 

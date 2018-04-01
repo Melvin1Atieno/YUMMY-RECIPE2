@@ -2,4 +2,4 @@ from flask import Flask
 
 app = Flask(__name__, instance_relative_config=True)
 
-from yummy import views
+from YUMMY import views
