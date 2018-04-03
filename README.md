@@ -1,6 +1,6 @@
 
 
-[![Build Status](https://travis-ci.org/Melvin1Atieno/YUMMY-RECIPE2.svg?branch=DEVELOP)](https://travis-ci.org/Melvin1Atieno/YUMMY-RECIPE2)
+[![Build Status](https://travis-ci.org/Melvin1Atieno/YUMMY-RECIPE2.svg?branch=master)](https://travis-ci.org/Melvin1Atieno/YUMMY-RECIPE2)
 
 [![Coverage Status](https://coveralls.io/repos/github/Melvin1Atieno/YUMMY-RECIPE2/badge.svg?branch=master)](https://coveralls.io/github/Melvin1Atieno/YUMMY-RECIPE2?branch=master)
 
