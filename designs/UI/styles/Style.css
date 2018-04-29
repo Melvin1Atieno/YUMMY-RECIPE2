@@ -1,9 +1,43 @@
-body {
+body{
     background-color: orange;
-    border: 1px solid green;
-    padding: 70px
+
+}
+nav li{
+    padding:4px;
+    /* float:right; */
+    /* color: black; */
+}
+#navbaritems{
+    color:black;
+    float:right;
 }
 
-img {
-    background-color: powderblue
+ul{
+    list-style-type: none;
+    padding:2px;
+}
+.top-half{
+    margin-top:75px;
+    width: 200%;
+    min-height:500px;
+    background-image : url("../images/foodtwo.jpg");
+    background-origin:border-box;
+    background-size: cover;
+    margin-bottom:4px;
+}
+#search-form{
+    border-radius: 50%;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+ul li img{
+    /* padding:2px; */
+    height: 85%;
+    width:150%;
+}
+#public-recipes li {
+    padding:0;
+    margin:0;
 }
