@@ -6,58 +6,192 @@
     <title>Yummy Recipes</title>
     <link rel="stylesheet" type="text/css" href="styles/Style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-    <link href="https://fonts.googleapis.com/css?family=Lato" rel="stylesheet">
-    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
-    
-</head>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm"crossorigin="anonymous">
+ </head>
 <body>
-    <nav class="navbar navbar-default">
+    <nav class="navbar  navbar-expand-md bg-dark fixed-top" id="navbar">
     <div class="container">
         <div class="navbar-header">
-            <button type="button" id="defaultNavbar1" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-controls="#navbar" aria-expanded="false" aria-label="Toggle navigation">
+            <button type="button" id="Navbar1" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-controls="#navbar" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="sr-only">Toggle navigation</span>
                 <span class="icon-bar"></span>
                 <span class="icon-bar"></span>
                 <span class="icon-bar"></span>
             </button>
-            <a class="navbar-brand" href="index.html">Yummy Recipes</a>
+            <a class="navbar-brand" href="#">Yummy Recipes</a>
         </div>
         <div id="navbar" class="collapse navbar-collapse">
             <ul class="nav navbar-nav">
-                <li><a href="index.html">Home</a></li>
-                <li class="dropdown">
-              <a href="#" class="dropdown-toggle"  data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Categories 
-                <span class="caret"></span></a>
-              <ul class="dropdown-menu">
-                <li><a href="retail.html">Recipe 1</a></li>
-                <li><a href="construction.html">Recipe 2</a></li>
-                <li><a href="hotel.html">Recipe 3</a></li>
-                <li><a href="finance.html">Recipe 4</a></li>
-                <li><a href="health.html">Recipe 5</a></li>
-                </ul>
-              </li>
+                <li class="nav-item">
+                    <a class="nav-link"href="#">Home</a>
+                </li>
+                <li class="nav-item dropdown">
+                    <a class="nav-link" href="#" class="dropdown-toggle"  data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false" >Categories
+                        <span class="caret"></span>
+                    </a>
+                    <ul class="dropdown-menu">
+                        <li><a href="retail.html">Recipe 1</a></li>
+                        <li><a href="construction.html">Recipe 2</a></li>
+                        <li><a href="hotel.html">Recipe 3</a></li>
+                        <li><a href="finance.html">Recipe 4</a></li>
+                        <li><a href="health.html">Recipe 5</a></li>
+                    </ul>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link"href="#">Explore</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#">About</a>
+                </li>
             </ul>
             <ul class="nav navbar-nav navbar-right">
-          <li><a href="login.html">Login</a></li>
-          <li><a href="user_registration.html">Register</a></li>
-      </ul>
-     </div>
+                <li class="nav-item">
+                    <a class="nav-link" href="#" data-toggle="modal" data-target="#share-modal">Share Recipe</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#" data-toggle="modal" data-target="#login-modal">login</a>
+                </li>
+                <li>
+                    <a class="nav-link"  href="#" data-toggle="modal" data-target="#sign-up-modal">Sign-up</a>
+                </li>
+            </ul>
+        </div>
     </div>
-
-
 </nav>
-    <title>Yummy Recipes</title>
-</head>
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-<script src="https://code.jquery.com/jquery-3.3.1.slim.js" integrity="sha256-fNXJFIlca05BIO2Y5zh1xrShK3ME+/lYZ0j+ChxX2DA=" 0crossorigin="anonymous"></script>
+<div class="container" align="center">
+    <form id="search-form">
+        <label for="search">
+            <input type="text" placeholer="Search Recipe" name="search">
+            <button class="btn btn-default">Search</button>
+        </label>
+    </form>
+</div>
+<!-- footer -->
+<nav class="navbar navbar-default navbar-fixed-bottom">
+    <div class="container" align="center">
+        <p> &copy Melvin Atieno</p>
+    </div>
+</nav>
+<!-- the log-in modal -->
+<div class="modal fade" id="login-modal">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="modal-title">LogIn</h4>
+                <button type="button" class="close" data-dismiss="modal">&times</button>
+            </div>
+            <!-- modal body -->
+            <div class="modal-body">
+                <form>
+                    <div class="form-group">
+                        <label for="usr">User Name:</label>
+                        <input type="text" class="form-control" id="usr" placeholder="Enter Username">
+                    </div>
+                    <div class="form-group">
+                        <label for="pwd">Password:</label>
+                        <input type="password" class="form-control" id="pwd" placeholder="Enter Password">
+                    </div>
+                    <button type="button" class="btn btn-success">SUBMIT</button>
+                </form>
+            </div>
+            <!-- modal footer -->
+            <div class="modal-footer">
+                <button type="button" class="btn btn-danger" data-dismiss="modal">close</button>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- sign-up modal -->
+<div class="modal fade" id="sign-up-modal">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="modal-title">Sign-up</h4>
+                <button type="button" class="close" data-dismiss="modal">&times</button>
+            </div>
+            <!-- modal body -->
+            <div class="modal-body">
+                <form>
+                    <div class="form-group">
+                        <label for="firstname">First Name:</label>
+                        <input type="text" class="form-control" id="firstname" placeholder="First Name">
+                    </div>
+                    <div class="form-group">
+                        <label for="lastname">Last Name:</label>
+                        <input type="text" class="form-control" id="lastName" placeholder="Last Name">
+                    </div>
+                    <div class="form-group">
+                        <label for="email">Email:</label>
+                        <input type="email" class="form-control" id="email" placeholder="Enter Email Address" name="email">
+                    </div>
+                    <div class="form-group">
+                        <label for="usrname">Preferred User Name:</label>
+                        <input type="text" class="form-control" id="usrname" placeholder="Enter preferred username">
+                    </div>
+                    <div class="form-group">
+                        <label for="pwd">Password:</label>
+                        <input type="password" class="form-control" id="pwd" placeholder="Enter password" name="pwd">
+                    </div>
+                    <div class="form-group">
+                        <label for="passwordd">Confirm Password:</label>
+                        <input type="password" class="form-control" id="pwd" placeholder="Re-Enter Password" name="pwd">
+                    </div>
+                    <button type="button" class="btn btn-success">SUBMIT</button>
+                </form>
+            </div>
+            <!-- modal footer -->
+            <div class="modal-footer">
+                <button type="button" class="btn btn-danger" data-dismiss="modal">close</button>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- share recipe modal -->
+<div class="modal fade" id="share-modal">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="modal-title">Share Recipe</h4>
+                <button type="button" class="close" data-dismiss="modal">&times</button>
+            </div>
+            <!-- modal body -->
+            <div class="modal-body">
+                <form>
+                    <div class="form-group">
+                        <label for="category">Recipe category:</label>
+                        <input type="text" class="form-control" id="category" placeholder="Enter Recipe Category">
+                    </div>
+                    <div class="form-group">
+                        <label for="name">Recipe Name:</label>
+                        <input type="text" class="form-control" id="name" placeholder="Enter Recipe Name">
+                    </div>
+                    <div>
+                        <label for="ingredients">Ingredients:</label>
+                        <textarea class="form-control" rows="5" id="ingredients"></textarea>
+                    </div>
+                    <div>
+                        <label for="method">Method:</label>
+                        <textarea class="form-control" rows="8" id="method" placeholder="Enter Method here"></textarea>
+                    </div>
+                    <div>
+                        <button type="button" class="btn btn-success">SUBMIT</button>
+                    </div>
+                </form>
+            </div>
+            <!-- modal footer -->
+            <div class="modal-footer">
+                <button type="button" class="btn btn-danger" data-dismiss="modal">close</button>
+            </div>
+        </div>
+    </div>
+</div>
+<script src="https://code.jquery.com/jquery-3.3.1.slim.js" integrity="sha256-fNXJFIlca05BIO2Y5zh1xrShK3ME+/lYZ0j+ChxX2DA=" crossorigin="anonymous"></script>
 <script src="https://code.jquery.com/jquery-2.1.3.min.js"></script>
 <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js">
-<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
-<nav class="navbar navbar-default navbar-fixed-bottom">
-  <div class="container" align="center">
-   &copy Melvin Atieno
-  </div>
-  
-</nav>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.bundle.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-formhelpers/2.3.0/js/bootstrap-formhelpers.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
 </body>
 </html>
