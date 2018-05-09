@@ -10,8 +10,7 @@
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm"crossorigin="anonymous">
  </head>
 <body>
-    <nav class="navbar  navbar-expand-md bg-dark fixed-top" id="navbar">
-    <div class="container">
+    <nav class="navbar  navbar-expand-md bg-white fixed-top" id="navbar">
         <div class="navbar-header">
             <button type="button" id="Navbar1" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-controls="#navbar" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="sr-only">Toggle navigation</span>
@@ -57,16 +56,21 @@
                 </li>
             </ul>
         </div>
+    </nav>
+<section align="center" id="sub-body">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-12">
+                <form id="search-form">
+                    <label for="search">
+                        <input type="text" placeholer="Search Recipe" name="search">
+                        <button class="btn btn-default">Search</button>
+                    </label>
+                </form>
+            </div>
+        </div>
     </div>
-</nav>
-<div class="container" align="center">
-    <form id="search-form">
-        <label for="search">
-            <input type="text" placeholer="Search Recipe" name="search">
-            <button class="btn btn-default">Search</button>
-        </label>
-    </form>
-</div>
+</section>
 <!-- footer -->
 <nav class="navbar navbar-default navbar-fixed-bottom">
     <div class="container" align="center">
