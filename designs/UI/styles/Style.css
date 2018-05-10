@@ -1,6 +1,7 @@
 body{
     width:100%;
     height:100%;
+
 }
 nav{
     /* margin-bottom:10px; */
@@ -9,9 +10,9 @@ section {
     margin-top:50px;
     padding:20%;
     border:2px solid black;
-    background-image: url("../images/foodone.jpg");
+    
     background-size: cover;
     background-origin: padding-box;
     background: no-repeat;
-    background-color: white;
+    /* background-color: white; */
 }
