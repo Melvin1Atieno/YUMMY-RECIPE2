@@ -3,16 +3,14 @@
 
 <head>
     <title>Yummy Recipes</title>
-    <link rel="shortcut icon" type="image/png" href="fav.png">
+    <link rel="shortcut icon" type="image/png" href="../UI/images/fav.png">
     <link rel="stylesheet" type="text/css" href="styles/Style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato">
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm"
-        crossorigin="anonymous">
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
 </head>
-
 <body >
-    <nav class="navbar  navbar-expand-md bg-white fixed-top" id="navbar">
+    <nav class="navbar navbar-default  navbar-expand-md fixed-top " id="navbar">
         <div class="navbar-header">
             <button type="button" id="Navbar1" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-controls="#navbar"
                 aria-expanded="false" aria-label="Toggle navigation">
@@ -58,32 +56,68 @@
                 </li>
             </ul>
             <ul class="nav navbar-nav navbar-right">
-                <li class="nav-item">
-                    <a class="nav-link" href="#" data-toggle="modal" data-target="#share-modal">Share Recipe</a>
-                </li>
-                <li class="nav-item">
-                    <button  class="btn btn-success navbar-button" href="#" data-toggle="modal" data-target="#login-modal">login</button>
+                <li>
+                    <a data-toggle="modal" data-target="#share-modal" role="button">Share Recipe</a>
                 </li>
                 <li>
-                    <button class="btn btn-success navbar-button" href="#" data-toggle="modal" data-target="#sign-up-modal">Sign-up</a>
+                    <a  data-toggle="modal" data-target="#login-modal" role="button">Login</a>
+                </li>
+                <li>
+                    <a data-toggle="modal" data-target="#sign-up-modal">Sign-up</a>
                 </li>
             </ul>
         </div>
     </nav>
-    <section align="center">
-        <div class="container">
-            <div class="row">
-                <div class="col-lg-12">
-                    <form id="search-form" >
-                        <label for="search">
-                            <input type="text" placeholer="Search Recipe" name="search">
-                            <button class="btn btn-default">Search</button>
-                        </label>
-                    </form>
+    <!-- search area -->
+    <div class="container" id="search-area">
+        <div class="row">
+            <div class="col-xs-6 col-centered">
+                <form id="search-form">
+                    <label for="search">
+                        <input type="text" placeholer="Search Recipe" name="search">
+                        <button class="btn btn-default">Search</button>
+                    </label>
+                </form>
+            </div>
+        </div>
+    </div>
+    <!-- public recipes -->
+    <div class="container">
+        <div class="row">
+            <div class="col-md-4 col-sn-12">
+                <div class="well">
+                    <img class="img-responsive" src="../UI/images/recipe1.jpg" alt="mixed fruit shake">
+                </div>
+            </div>
+            <div class="col-md-4 col-sm-12">
+                <div class="well">
+                    <img class="img-responsive" src="../UI/images/recipe2.jpg" alt="fried rice">
+                </div>
+            </div>
+            <div class="col-md-4 col-sm-12">
+                <div class="well">
+                    <img class="img-responsive" src="../UI/images/recipe3.jpg" alt="strawberry pancakes">
                 </div>
             </div>
         </div>
-    </section>
+        <div class="row">
+            <div class="col-md-4 col-sn-12">
+                <div class="well">
+                    <img class="img-responsive" src="../UI/images/recipe4.jpg" alt="mixed fruit shake">
+                </div>
+            </div>
+            <div class="col-md-4 col-sm-12">
+                <div class="well">
+                    <img class="img-responsive" src="../UI/images/recipe5.jpg" alt="fried rice">
+                </div>
+            </div>
+            <div class="col-md-4 col-sm-12">
+                <div class="well">
+                    <img class="img-responsive" src="../UI/images/recipe6.jpg" alt="strawberry pancakes">
+                </div>
+            </div>
+        </div>
+    </div>
     <!-- footer -->
     <nav class="navbar navbar-default navbar-fixed-bottom">
         <div class="container" align="center">
@@ -177,7 +211,13 @@
                     <form>
                         <div class="form-group">
                             <label for="category">Recipe category:</label>
-                            <input type="text" class="form-control" id="category" placeholder="Enter Recipe Category">
+                            <select>
+                                <option><a href="">Recipe 1</a></option>
+                                <option><a href="">Recipe 2</a></option>
+                                <option><a href="">Recipe 3</a></option>
+                                <option><a href="">Recipe 4</a></option>
+                                <option><a href="">Recipe 5</a></option>
+                            </select>
                         </div>
                         <div class="form-group">
                             <label for="name">Recipe Name:</label>
@@ -203,14 +243,9 @@
             </div>
         </div>
     </div>
-    <script src="https://code.jquery.com/jquery-3.3.1.slim.js" integrity="sha256-fNXJFIlca05BIO2Y5zh1xrShK3ME+/lYZ0j+ChxX2DA="
-        crossorigin="anonymous"></script>
-    <script src="https://code.jquery.com/jquery-2.1.3.min.js"></script>
-    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.bundle.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-formhelpers/2.3.0/js/bootstrap-formhelpers.min.js"></script>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa"
+        crossorigin="anonymous"></script>
 </body>
 
 </html>
