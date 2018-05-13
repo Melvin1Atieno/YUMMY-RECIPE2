@@ -17,3 +17,4 @@ create a virtualenv and a virtualenvwrapper(optional)
 run pip install -r requirements.txt.
 run python app.py in your terminal to view app.
 
+View app UI demo at https://melvin1atieno.github.io/YUMMY-RECIPE2/
